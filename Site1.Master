@@ -1,0 +1,130 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site1.master.cs" Inherits="MTN.Site1" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <%-- CSS--%>
+    <link href="css/flexboxgrid.css" rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet" />
+    <%-- JAVASCRIPT--%>
+    
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <%--HEADER--%>
+    <form runat="server">
+    <header id="main-header">
+        <div class="container">
+            <div class="row end-sm end-md end-lg center-xs middle-xs middle-sm middle-md middle-lg">
+                <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+                    <a href="Home.aspx" class="logo"><img src="img/logo.png" alt="logo"></a>
+                </div>
+                <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10">
+                    <nav id="nav_ul">
+                        <ul>
+                            <li class="current"><a class="menu" href="Home.aspx">Home</a></li>
+                            <li >
+                                <asp:LinkButton Visible="false" OnClick="Profile_click" class="menu" ID="profile" runat="server">Profile</asp:LinkButton>
+                            </li>
+                            <li >
+                                <a id="loginbtn" class="loginbtn" runat="server" >Login</a>
+                            </li>
+                            <li >
+                                <asp:LinkButton Visible="false" OnClick="Logoutbtn_click" class="logoutbtn" ID="logoutbtn" runat="server">Logout</asp:LinkButton>
+                            </li>
+                            <li >
+                                <asp:LinkButton Visible="false" OnClick="Adminmanagement_click" class="menu" ID="adminmanagement" runat="server">Admin</asp:LinkButton>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+                 <%--LOGIN BAR--%>
+    <div class="loginbar">
+        <div class="loginform" >
+            
+                <asp:TextBox CssClass="logbox" type="username" name="username" ID="TextBox1"  placeholder="User Name" runat="server" required="required"></asp:TextBox>
+                
+                <asp:TextBox class="logbox"  type="password" name="password" ID="TextBox2"  placeholder="Password" runat="server" required="required"  TextMode="Password"></asp:TextBox>
+                <br />
+                <a href="SignUp.aspx"  ></a>
+                <asp:LinkButton OnClick="Signup_click" class="helplink" ID="LinkButton1" runat="server">Not registered?</asp:LinkButton>
+                <br/>
+                <br/>
+                <asp:Button OnClick="login_click" UseSubmitBehavior="false" class="loginbarbtn" type="submit" ID="loginbarbtn" name="loginbarbtn" runat="server" Text="Log In"  />
+        </div>
+    </div>
+    <%--<div class="loginbar">
+        onchange="verifyPassword()"
+        <div class="loginform" >
+            <form >
+                <input type="email" name="email" id="email" placeholder="Email">
+                
+                <input type="password" name="password" id="password" placeholder="password" onchange="validatepassword();">
+            <br>
+                <a href="SignUp.aspx" class="helplink" >Not registered?</a>
+                <br>
+            <br>
+                <button type="submit" name="btnlog">Log In</button>
+            </form>
+        </div>
+    </div>--%>
+    
+        
+    
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+
+
+    <%--SOCIALMEDIA--%>
+    <div class="col-sm-12 SocialMediaBar" >
+   
+        <div class="col-xs-2"> 
+            <a class="SocialLink" target="_blank" href="http://www.facebook.com/MTNSY">
+                <img src="img/icons8-facebook-100.png" alt="facebook">
+            </a>
+        </div>
+    
+        <div class="col-xs-2">
+            <a class="SocialLink" target="_blank" href="https://twitter.com/MTNSY">
+                <img src="img/icons8-twitter-circled-100.png" alt="twitter">
+            </a>
+        </div>
+    
+        <div class="col-xs-2">
+            <a class="SocialLink" target="_blank" href="https://www.linkedin.com/company/mtn-syria">
+                <img src="img/icons8-linkedin-100.png" alt="linkedin">
+            </a>
+        </div>
+    
+        <div class="col-xs-2">
+            <a class="SocialLink" target="_blank" href="https://www.instagram.com/mtnsyria/">
+                <img src="img/icons8-instagram-100.png" alt="instagram">
+            </a>
+        </div>
+    
+        <div class="col-xs-2">
+            <a class="SocialLink" target="_blank" href="https://youtube.com/MTNSY">
+                <img src="img/icons8-youtube-logo-100.png" alt="youtube">
+            </a>
+        </div>
+    
+    </div>
+    <%--FOOTER--%>
+    <footer>
+        <div>
+            <div class="footer">
+                <p>© 2022 Mobile Telephone Networks. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+        <script src="js/signup.js"></script>
+    </form>
+    <link href="css/style.css" rel="stylesheet" />
+</body>
+</html>
